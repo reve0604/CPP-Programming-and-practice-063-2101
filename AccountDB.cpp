@@ -1,5 +1,6 @@
 #include "AccountDB.h"
 #include <algorithm>
+// void AccountDB::addAccount() í•¨ìˆ˜ ìž‘ì„±(ifë¬¸ ë¶€ë¶„)
 
 bool compareFunction(const Account& o1, const Account& o2) {
 	return o1.GetAccID() < o2.GetAccID();
@@ -7,15 +8,14 @@ bool compareFunction(const Account& o1, const Account& o2) {
 
 AccountDB::AccountDB() {}
 
-// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì) 
 void AccountDB::addAccount() {
 	int balance;
 	string cusName;
 	cout << "-----------------------" << endl;
-	cout << "½Å±Ô °èÁÂ »ý¼º ÆäÀÌÁö" << endl;
-	cout << "°èÁÂ»ý¼º½Ã ÀÔ±Ý±Ý¾× :";
+	cout << "ì‹ ê·œ ê³„ì¢Œ ìƒì„± íŽ˜ì´ì§€" << endl;
+	cout << "ê³„ì¢Œìƒì„±ì‹œ ìž…ê¸ˆê¸ˆì•¡ :";
 	cin >> balance;
-	cout << "ÀÌ¸§ :";
+	cout << "ì´ë¦„ :";
 	cin >> cusName;
 	
 	if(DB.size() == 0)
@@ -54,7 +54,7 @@ void AccountDB::showAllAccount() {
 void AccountDB::showAccount(int accID) {
 	int idx = searchAccount(0, lengthAccountDB() - 1, accID);
 	if (idx == -1) {
-		cout << "ÀÏÄ¡ÇÏ´Â °èÁÂ¹øÈ£°¡ ¾ø½À´Ï´Ù." << endl;
+		cout << "ì¼ì¹˜í•˜ëŠ” ê³„ì¢Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤." << endl;
 		system("PAUSE");
 	}
 	else {
@@ -69,16 +69,16 @@ string AccountDB::GetName(int idx) {
 }
 
 
-void AccountDB::sortAccount() { // ¿À¸§Â÷¼ø Á¤·Ä
+void AccountDB::sortAccount() { // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
 	sort(DB.begin(), DB.end(), compareFunction);
 }
 
-int AccountDB::lengthAccountDB() { // ADB º¤ÅÍÀÇ ¿ø¼Ò ¼ö ¹ÝÈ¯
+int AccountDB::lengthAccountDB() { // ADB ë²¡í„°ì˜ ì›ì†Œ ìˆ˜ ë°˜í™˜
 	return DB.size();
 }
 
-int AccountDB::searchAccount(int start_index, int end_index, int accID) { // ADB º¤ÅÍ ³»¿¡ ÀÔ·Â¹ÞÀº accID¿Í ÀÏÄ¡ÇÏ´Â ¿ø¼ÒÀÇ ÀÎµ¦½º °ªÀ» ¹ÝÈ¯ÇÑ´Ù.
-	int middle = (start_index + end_index) / 2;							  // ÀÏÄ¡ÇÏ´Â ¿ø¼Ò°¡ Á¸ÀçÇÏÁö ¾Ê´Â °æ¿ì -1À» ¹ÝÈ¯ÇÑ´Ù.
+int AccountDB::searchAccount(int start_index, int end_index, int accID) { // ADB ë²¡í„° ë‚´ì— ìž…ë ¥ë°›ì€ accIDì™€ ì¼ì¹˜í•˜ëŠ” ì›ì†Œì˜ ì¸ë±ìŠ¤ ê°’ì„ ë°˜í™˜í•œë‹¤.
+	int middle = (start_index + end_index) / 2;							  // ì¼ì¹˜í•˜ëŠ” ì›ì†Œê°€ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ê²½ìš° -1ì„ ë°˜í™˜í•œë‹¤.
 	if (end_index - start_index == 1) {
 		if (DB[start_index].GetAccID() == accID) {
 			return start_index;
@@ -113,17 +113,17 @@ void AccountDB::deleteAccount() {
 	int accID;
 
 	while (true) {
-		cout << "»èÁ¦ÇÒ °èÁÂÀÇ °èÁÂ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+		cout << "ì‚­ì œí•  ê³„ì¢Œì˜ ê³„ì¢Œë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
 		cin >> accID;
 
 		int idx = searchAccount(0, lengthAccountDB() - 1, accID);
 
 		if (idx == -1) {
-			cout << "ÀÏÄ¡ÇÏ´Â °èÁÂ¹øÈ£°¡ ¾ø½À´Ï´Ù." << endl;
+			cout << "ì¼ì¹˜í•˜ëŠ” ê³„ì¢Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤." << endl;
 			system("PAUSE");
 		}
 		else {
-			cout << "ÀÔ·ÂÇÏ½Å °èÁÂ°¡ »èÁ¦µÇ¾ú½À´Ï´Ù." << endl;
+			cout << "ìž…ë ¥í•˜ì‹  ê³„ì¢Œê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
 			DB.erase(DB.begin() + idx);
 			system("PAUSE");
 			break;
@@ -134,7 +134,7 @@ void AccountDB::deleteAccount() {
 void AccountDB::accountDeposit(int accID, int money) {
 	int idx = searchAccount(0, lengthAccountDB() - 1, accID);
 	if (idx == -1) {
-		cout << "ÀÏÄ¡ÇÏ´Â °èÁÂ¹øÈ£°¡ ¾ø½À´Ï´Ù." << endl;
+		cout << "ì¼ì¹˜í•˜ëŠ” ê³„ì¢Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤." << endl;
 		system("PAUSE");
 	}
 	else {
@@ -145,7 +145,7 @@ void AccountDB::accountDeposit(int accID, int money) {
 void AccountDB::accountWithdraw(int accID, int money) {
 	int idx = searchAccount(0, lengthAccountDB() - 1, accID);
 	if (idx == -1) {
-		cout << "ÀÏÄ¡ÇÏ´Â °èÁÂ¹øÈ£°¡ ¾ø½À´Ï´Ù." << endl;
+		cout << "ì¼ì¹˜í•˜ëŠ” ê³„ì¢Œë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤." << endl;
 		system("PAUSE");
 	}
 	else {
