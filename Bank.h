@@ -1,5 +1,7 @@
 #include "saving.h"
 #include "loan.h"
+// void Bank::client()í•¨ìˆ˜ ìž‘ì„±(ì˜ˆì™¸ì²˜ë¦¬)
+// void Bank::BankManager()í•¨ìˆ˜ ìž‘ì„±(ì˜ˆì™¸ì²˜ë¦¬)
 
 class Bank {
 private:
@@ -19,8 +21,8 @@ public:
 	void savig();			
 	void loan();			
 
-	void client();				// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì)  			
-	void BankManager();			// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì)  	
+	void client();							
+	void BankManager();				
 	void savingManager();
 	void loanManager();
 };
