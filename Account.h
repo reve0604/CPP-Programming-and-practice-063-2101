@@ -10,7 +10,7 @@ class Account
 private:
 	int accID; 
 	int balance;
-	int password;    // 6자리 숫자로 구성     
+	int password;       
 	string cusName;
 public:
 	Account(int money, string name);
