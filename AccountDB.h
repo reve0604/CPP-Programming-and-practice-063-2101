@@ -1,6 +1,7 @@
 #pragma once
 #include "Account.h"
 #include <vector>
+// addAccount() í•¨ìˆ˜ ìž‘ì„±(ifë¬¸ ë¶€ë¶„)
 
 
 class AccountDB
@@ -9,7 +10,7 @@ private:
 	vector <Account> DB;
 public:
 	AccountDB();
-	void addAccount();				// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì) 
+	void addAccount();				
 	void showAllAccount();			
 	void showAccount(int accID);
 	string GetName(int idx);
