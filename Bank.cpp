@@ -2,6 +2,8 @@
 #include "loan.h"
 #include "saving.h"
 #include <cstdlib>
+// void Bank::client()í•¨ìˆ˜ ìž‘ì„±(ì˜ˆì™¸ì²˜ë¦¬)
+// void Bank::BankManager()í•¨ìˆ˜ ìž‘ì„±(ì˜ˆì™¸ì²˜ë¦¬)
 
 Bank::Bank() {
 	num = 0;
@@ -11,7 +13,7 @@ void Bank::setAuthority(){
 	int authority;
 	
 	do {
-		cout << "1 : °í°´		2 : °ü¸®ÀÚ" << endl;
+		cout << "1 : ê³ ê°		2 : ê´€ë¦¬ìž" << endl;
 		cin >> authority;
 	} while (authority !=1 && authority !=2);
 
@@ -23,23 +25,23 @@ void Bank::setAuthority(){
 	}
 }
 
-// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì)  
+
 void Bank::client() {
 	do {
 		system("cls");
 
-		cout << "0. ÇÁ·Î±×·¥ Á¾·á" << endl;
-		cout << "1. °èÁÂ°¡ÀÔ " << endl;
-		cout << "2. °èÁÂÇØÁö" << endl;
-		cout << "3. º»ÀÎ°èÁÂÁ¤º¸Ãâ·Â" << endl;
-		cout << "4. ÀÔ±Ý" << endl;
-		cout << "5. Ãâ±Ý" << endl;
-		cout << "6. Àû±Ý" << endl;
-		cout << "7. ´ëÃâ" << endl;
-		cout << "8. Ã¹ È­¸éÀ¸·Î" << endl;
+		cout << "0. í”„ë¡œê·¸ëž¨ ì¢…ë£Œ" << endl;
+		cout << "1. ê³„ì¢Œê°€ìž… " << endl;
+		cout << "2. ê³„ì¢Œí•´ì§€" << endl;
+		cout << "3. ë³¸ì¸ê³„ì¢Œì •ë³´ì¶œë ¥" << endl;
+		cout << "4. ìž…ê¸ˆ" << endl;
+		cout << "5. ì¶œê¸ˆ" << endl;
+		cout << "6. ì ê¸ˆ" << endl;
+		cout << "7. ëŒ€ì¶œ" << endl;
+		cout << "8. ì²« í™”ë©´ìœ¼ë¡œ" << endl;
 
 		int num;
-		cout <<"\n\n"<<"0 ~ 8 ¹øÈ£ ÀÔ·Â : " << endl;
+		cout <<"\n\n"<<"0 ~ 8 ë²ˆí˜¸ ìž…ë ¥ : " << endl;
 		cin >> num;
 		switch (num)
 		{
@@ -87,26 +89,25 @@ void Bank::client() {
 				return;
 			}
 			default: {
-				cout << "0 ~ 8 »çÀÌÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." << endl;
+				cout << "0 ~ 8 ì‚¬ì´ì˜ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." << endl;
 			}
 		}
 	} while (true);
 }
 
-// °øµ¿ ÀÛ¾÷(º¯Àç¿ë, ÀüÃ¢¿ì) 
 void Bank::BankManager() {
 	do {
 		system("cls");
 
-		cout << "0. ÇÁ·Î±×·¥ Á¾·á" << endl;
-		cout << "1. ÀüÃ¼°í°´°èÁÂÃâ·Â" << endl;
-		cout << "2. ´ÜÀÏ°í°´°èÁÂÃâ·Â" << endl;
-		cout << "3. Àû±Ý °ü¸®" << endl;
-		cout << "4. ´ëÃâ °ü¸®" << endl;
-		cout << "5. Ã¹ È­¸éÀ¸·Î" << endl;
+		cout << "0. í”„ë¡œê·¸ëž¨ ì¢…ë£Œ" << endl;
+		cout << "1. ì „ì²´ê³ ê°ê³„ì¢Œì¶œë ¥" << endl;
+		cout << "2. ë‹¨ì¼ê³ ê°ê³„ì¢Œì¶œë ¥" << endl;
+		cout << "3. ì ê¸ˆ ê´€ë¦¬" << endl;
+		cout << "4. ëŒ€ì¶œ ê´€ë¦¬" << endl;
+		cout << "5. ì²« í™”ë©´ìœ¼ë¡œ" << endl;
 
 		int num;
-		cout <<"\n\n" << "0 ~ 5 ¹øÈ£ ÀÔ·Â : " << endl;
+		cout <<"\n\n" << "0 ~ 5 ë²ˆí˜¸ ìž…ë ¥ : " << endl;
 		cin >> num;
 		switch (num)
 		{
@@ -140,7 +141,7 @@ void Bank::BankManager() {
 				return;
 			}
 			default: {
-				cout << "0 ~ 5 »çÀÌÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä." << endl; 
+				cout << "0 ~ 5 ì‚¬ì´ì˜ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." << endl; 
 				system("PAUSE");
 
 			}
@@ -152,7 +153,7 @@ void Bank::joinAccount() {
 	ADB.addAccount();
 }
 
-void Bank::cancelAccount() {				// account.hÀÇ GetAccId() ÇÔ¼ö°¡ const·Î µÇÀÖ´Âµ¥ ÀÌ°Íµµ const·Î ¼³Á¤??
+void Bank::cancelAccount() {				// account.hì˜ GetAccId() í•¨ìˆ˜ê°€ constë¡œ ë˜ìžˆëŠ”ë° ì´ê²ƒë„ constë¡œ ì„¤ì •??
 	ADB.deleteAccount();
 }
 
@@ -163,16 +164,16 @@ void Bank::allAccountsPrint() {
 void Bank::accountPrint() {
 	int accountNum;
 
-	cout << "°èÁÂ¹øÈ£ ÀÔ·Â : ";
+	cout << "ê³„ì¢Œë²ˆí˜¸ ìž…ë ¥ : ";
 	cin >> accountNum;
 	ADB.showAccount(accountNum);
 }
 
 void Bank::deposit() {
 	int accountNum, depositMoney;
-	cout << "°èÁÂ¹øÈ£ ÀÔ·Â : ";
+	cout << "ê³„ì¢Œë²ˆí˜¸ ìž…ë ¥ : ";
 	cin >> accountNum;
-	cout << "ÀÔ±Ý¾× ÀÔ·Â : ";
+	cout << "ìž…ê¸ˆì•¡ ìž…ë ¥ : ";
 	cin >> depositMoney;
 
 	ADB.accountDeposit(accountNum, depositMoney);
@@ -180,9 +181,9 @@ void Bank::deposit() {
 
 void Bank::withdraw() {
 	int accountNum, withdrawMoney;
-	cout << "°èÁÂ¹øÈ£ ÀÔ·Â : ";
+	cout << "ê³„ì¢Œë²ˆí˜¸ ìž…ë ¥ : ";
 	cin >> accountNum;
-	cout << "Ãâ±Ý¾× ÀÔ·Â : ";
+	cout << "ì¶œê¸ˆì•¡ ìž…ë ¥ : ";
 	cin >> withdrawMoney;
 
 	ADB.accountWithdraw(accountNum, withdrawMoney);
@@ -192,9 +193,9 @@ void Bank::savig() {
 	int num;
 	do {
 		system("cls");
-		cout << "1: Àû±Ý" << endl;
-		cout << "2: Àû±Ý ÇØÁö" << endl;
-		cout << "3: µÚ·Î°¡±â" << endl;
+		cout << "1: ì ê¸ˆ" << endl;
+		cout << "2: ì ê¸ˆ í•´ì§€" << endl;
+		cout << "3: ë’¤ë¡œê°€ê¸°" << endl;
 		cin >> num;
 		switch (num) {
 		case 1: {
@@ -213,7 +214,7 @@ void Bank::savig() {
 			return;
 		}
 		default: {
-			cout << "1¹ø°ú 2¹ø Áß ¼±ÅÃÇÏ¼¼¿ä" << endl;
+			cout << "1ë²ˆê³¼ 2ë²ˆ ì¤‘ ì„ íƒí•˜ì„¸ìš”" << endl;
 			system("PAUSE");
 		}
 		}
@@ -223,9 +224,9 @@ void Bank::savingManager() {
 	while (true) {
 		system("cls");
 		int num;
-		cout << "1: Àû±Ý »óÇ° ³»¿ë º¯°æ" << endl;
-		cout << "2: Àû±Ý »óÇ° ÀüÃ¼ Á¶È¸" << endl;
-		cout << "3: µÚ·Î°¡±â" << endl;
+		cout << "1: ì ê¸ˆ ìƒí’ˆ ë‚´ìš© ë³€ê²½" << endl;
+		cout << "2: ì ê¸ˆ ìƒí’ˆ ì „ì²´ ì¡°íšŒ" << endl;
+		cout << "3: ë’¤ë¡œê°€ê¸°" << endl;
 		cin >> num;
 		switch (num)
 		{
@@ -243,7 +244,7 @@ void Bank::savingManager() {
 				return;
 			}
 			default: {
-				cout << "1°ú 2¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä" << endl;
+				cout << "1ê³¼ 2ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”" << endl;
 				system("PAUSE");
 				break;
 			}
@@ -253,10 +254,10 @@ void Bank::savingManager() {
 void Bank::loan(){
 	while (true) {
 		system("cls");
-		cout << "1: ´ëÃâ" << endl;
-		cout << "2: ´ëÃâ »óÈ¯±Ý Á¶È¸" << endl;
-		cout << "3: ´ëÃâ »óÈ¯" << endl;
-		cout << "4: µÚ·Î°¡±â" << endl;
+		cout << "1: ëŒ€ì¶œ" << endl;
+		cout << "2: ëŒ€ì¶œ ìƒí™˜ê¸ˆ ì¡°íšŒ" << endl;
+		cout << "3: ëŒ€ì¶œ ìƒí™˜" << endl;
+		cout << "4: ë’¤ë¡œê°€ê¸°" << endl;
 		cin >> num;
 		switch (num) {
 			case 1: {
@@ -281,7 +282,7 @@ void Bank::loan(){
 				return;
 			}
 			default: {
-				cout << "1 ~ 4 »çÀÌÀÇ ¹øÈ£¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä" << endl;
+				cout << "1 ~ 4 ì‚¬ì´ì˜ ë²ˆí˜¸ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”" << endl;
 				system("PAUSE");
 				break;
 			}
@@ -292,9 +293,9 @@ void Bank::loanManager() {
 	while (true) {
 		system("cls");
 		int num;
-		cout << "1: ´ëÃâ »óÇ° Ãß°¡" << endl;
-		cout << "2: ´ëÃâ »óÇ° ÀüÃ¼ Á¶È¸" << endl;
-		cout << "3: µÚ·Î°¡±â" << endl;
+		cout << "1: ëŒ€ì¶œ ìƒí’ˆ ì¶”ê°€" << endl;
+		cout << "2: ëŒ€ì¶œ ìƒí’ˆ ì „ì²´ ì¡°íšŒ" << endl;
+		cout << "3: ë’¤ë¡œê°€ê¸°" << endl;
 		cin >> num;
 		switch (num)
 		{
@@ -314,7 +315,7 @@ void Bank::loanManager() {
 				return;
 			}
 			default: {
-				cout << "1°ú 2¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä" << endl;
+				cout << "1ê³¼ 2ë§Œ ìž…ë ¥í•´ì£¼ì„¸ìš”" << endl;
 				system("PAUSE");
 				break;
 			}
